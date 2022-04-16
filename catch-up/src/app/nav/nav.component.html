@@ -1,0 +1,29 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Sources</mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item *ngFor="let source of sources"
+                     (click)="onSourceSelected(source);drawer.toggle();">
+        <img mat-list-avatar [src]="source.urlToLogo" [alt]="source.name">
+        <p mat-line><span>{{ source.name }}</span></p>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>CatchUp</span>
+    </mat-toolbar>
+    <app-main-content [articles]="articles"></app-main-content>
+    <app-footer-content></app-footer-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
