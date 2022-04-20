@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {NewsApiService} from "./core/services/news-api.service";
-import {LogoApiService} from "./core/services/logo-api.service";
+
 
 @Component({
   selector: 'app-root',

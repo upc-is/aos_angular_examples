@@ -1,8 +1,5 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "a4fb1461-a701-4b2d-b0b5-eebb38ac950c"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -103,9 +100,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "learning-center"
+  "defaultProject": "learning-center",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

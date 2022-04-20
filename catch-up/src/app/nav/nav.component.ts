@@ -1,7 +1,10 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+
 import {NewsApiService} from "../core/services/news-api.service";
 import {LogoApiService} from "../core/services/logo-api.service";
 
@@ -21,15 +24,18 @@ export class NavComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver, private newsApi: NewsApiService, private logoApi: LogoApiService) {}
+  constructor(private breakpointObserver: BreakpointObserver,
+              private newsApi: NewsApiService,
+              private logoApi: LogoApiService) {}
 
   ngOnInit(): void {
-    this.newsApi.getSources().subscribe((data: any) => {
-      this.sources = data['sources'];
-      this.sources.map(source => source.urlToLogo = this.logoApi.getUrlToLogo(source));
-      console.log(this.sources);
-      this.searchArticlesForSource(this.sources[0]);
-    });
+    this.newsApi.getSources()
+      .subscribe((data: any) => {
+        this.sources = data['sources'];
+        this.sources.map(source => source.urlToLogo = this.logoApi.getUrlToLogo(source));
+        console.log(this.sources);
+        this.searchArticlesForSource(this.sources[0]);
+      });
   }
 
   onSourceSelected(source: any) {

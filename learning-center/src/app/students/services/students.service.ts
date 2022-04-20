@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
-import {Observable, throwError} from "rxjs";
+import {catchError, Observable, retry, throwError} from "rxjs";
 import {Student} from "../model/student";
-import {catchError, retry} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentsService {
+
   // Students Endpoint
   basePath = 'http://localhost:3000/api/v1/students';
 
@@ -30,7 +30,7 @@ export class StudentsService {
       );
     }
     // Return Observable with Error Message to Client
-    return throwError('Something happened with request, please try again later');
+    return throwError(() => new Error('Something happened with request, please try again later'));
   }
 
   // Create Student
@@ -59,7 +59,7 @@ export class StudentsService {
 
   // Update Student
   update(id: any, item: any): Observable<Student> {
-    return this.http.post<Student>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+    return this.http.put<Student>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(
         retry(2),
         catchError(this.handleError));

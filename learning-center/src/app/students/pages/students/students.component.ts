@@ -1,17 +1,18 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {StudentsService} from "../../services/students.service";
-import {Student} from "../../model/student";
-import {MatTableDataSource} from "@angular/material/table";
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import { MatTableDataSource } from "@angular/material/table";
 import {NgForm} from "@angular/forms";
+import {Student} from "../../model/student";
 import {MatPaginator} from "@angular/material/paginator";
-import * as _ from 'lodash';
-
+import {MatSort} from "@angular/material/sort";
+import {StudentsService} from "../../services/students.service";
+import * as _ from "lodash";
 @Component({
   selector: 'app-students',
   templateUrl: './students.component.html',
   styleUrls: ['./students.component.css']
 })
-export class StudentsComponent implements OnInit {
+export class StudentsComponent implements OnInit, AfterViewInit {
+
   studentData: Student;
   dataSource: MatTableDataSource<any>;
   displayedColumns: string[] = ['id', 'name', 'age', 'address', 'actions'];
@@ -21,6 +22,9 @@ export class StudentsComponent implements OnInit {
 
   @ViewChild(MatPaginator, {static: true})
   paginator!: MatPaginator;
+
+  @ViewChild(MatSort)
+  sort!: MatSort;
 
   isEditMode = false;
 
@@ -32,6 +36,10 @@ export class StudentsComponent implements OnInit {
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
     this.getAllStudents();
+  }
+
+  ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
   }
 
   getAllStudents() {
@@ -51,7 +59,7 @@ export class StudentsComponent implements OnInit {
   }
 
   deleteItem(id: number) {
-    this.studentsService.delete(id).subscribe((response: any) => {
+    this.studentsService.delete(id).subscribe(() => {
       this.dataSource.data = this.dataSource.data.filter((o: Student) => {
         return o.id !== id ? o : false;
       });
@@ -60,6 +68,7 @@ export class StudentsComponent implements OnInit {
   }
 
   addStudent() {
+    this.studentData.id = 0;
     this.studentsService.create(this.studentData).subscribe((response: any) => {
       this.dataSource.data.push( {...response});
       this.dataSource.data = this.dataSource.data.map((o: any) => { return o; });
@@ -74,19 +83,23 @@ export class StudentsComponent implements OnInit {
         }
         return o;
       });
-      this.cancelEdit();
     });
   }
 
   onSubmit() {
     if (this.studentForm.form.valid) {
+      console.log('valid');
       if (this.isEditMode) {
+        console.log('about to update');
         this.updateStudent();
       } else {
+        console.log('about to add');
         this.addStudent();
       }
+      this.cancelEdit();
     } else {
       console.log('Invalid data');
     }
   }
+
 }
