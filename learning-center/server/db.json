@@ -35,6 +35,47 @@
       "name": "David Lucani",
       "age": 32,
       "address": "The Last Frontier"
+    },
+    {
+      "id": 7,
+      "name": "Carlos Jimenez",
+      "age": 55,
+      "address": "Lima"
+    },
+    {
+      "id": 8,
+      "name": "Rosa Del Campo",
+      "age": 15,
+      "address": "Av Brasil"
+    },
+    {
+      "id": 9,
+      "name": "Pedro Linarez",
+      "age": 40,
+      "address": "Av. salaverry 2255"
+    },
+    {
+      "id": 10,
+      "name": "Maria Perez",
+      "age": 25,
+      "address": "Lima"
+    },
+    {
+      "name": "Carlos Rosales",
+      "age": 15,
+      "address": "Huachipa",
+      "id": 11
+    },
+    {
+      "name": "Carlos Rosales",
+      "age": 15,
+      "address": "Huachipa",
+      "id": 12
+    },
+    {
+      "name": "Carlos Rosales",
+      "age": 15,
+      "id": 13
     }
   ],
   "skills": [
