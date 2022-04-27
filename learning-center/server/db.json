@@ -85,7 +85,7 @@
     },
     {
       "id": 2,
-      "name": "Backend Developer"
+      "name": "Backend Developer Senior"
     },
     {
       "id": 3,
@@ -94,6 +94,14 @@
     {
       "id": 4,
       "name": "Mobile App Developer"
+    },
+    {
+      "id": "5",
+      "name": "Reactive Developer"
+    },
+    {
+      "id": "6",
+      "name": "Functional Developer Senior 2"
     }
   ],
   "competences": [

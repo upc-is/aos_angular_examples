@@ -41,4 +41,28 @@ export class SkillsService {
         retry(2),
         catchError(this.handleError));
   }
+
+  // Create Student
+  create(item: any): Observable<Skill> {
+    return this.http.post<Skill>(this.basePath, JSON.stringify(item), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+  // Update Student
+  update(id: any, item: any): Observable<Skill> {
+    return this.http.put<Skill>(`${this.basePath}/${id}`, JSON.stringify(item), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
+
+  // Delete Student
+  delete(id: any) {
+    return this.http.delete(`${this.basePath}/${id}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
 }
