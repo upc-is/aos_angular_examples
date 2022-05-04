@@ -1,0 +1,7 @@
+{
+  "/api/v1/*" : "/$1",
+  "/students/:studentId/skills": "/competences?studentId=:studentId&_expand=skill",
+  "/auth/*" : "/$1",
+  "/sign-in": "/signin",
+  "/sign-up": "/signup"
+}

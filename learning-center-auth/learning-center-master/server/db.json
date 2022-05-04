@@ -4,7 +4,7 @@
       "id": 1,
       "name": "John Doe",
       "age": 25,
-      "address": "NoWhere 2"
+      "address": "NoWhere"
     },
     {
       "id": 2,
@@ -35,47 +35,6 @@
       "name": "David Lucani",
       "age": 32,
       "address": "The Last Frontier"
-    },
-    {
-      "id": 7,
-      "name": "Carlos Jimenez",
-      "age": 55,
-      "address": "Lima"
-    },
-    {
-      "id": 8,
-      "name": "Rosa Del Campo",
-      "age": 15,
-      "address": "Av Brasil"
-    },
-    {
-      "id": 9,
-      "name": "Pedro Linarez",
-      "age": 40,
-      "address": "Av. salaverry 2255"
-    },
-    {
-      "id": 10,
-      "name": "Maria Perez",
-      "age": 25,
-      "address": "Lima"
-    },
-    {
-      "name": "Carlos Rosales",
-      "age": 15,
-      "address": "Huachipa",
-      "id": 11
-    },
-    {
-      "name": "Carlos Rosales",
-      "age": 15,
-      "address": "Huachipa",
-      "id": 12
-    },
-    {
-      "name": "Carlos Rosales",
-      "age": 15,
-      "id": 13
     }
   ],
   "skills": [
@@ -85,7 +44,7 @@
     },
     {
       "id": 2,
-      "name": "Backend Developer Senior"
+      "name": "Backend Developer"
     },
     {
       "id": 3,
@@ -94,14 +53,6 @@
     {
       "id": 4,
       "name": "Mobile App Developer"
-    },
-    {
-      "id": "5",
-      "name": "Reactive Developer"
-    },
-    {
-      "id": "6",
-      "name": "Functional Developer Senior 2"
     }
   ],
   "competences": [
@@ -124,6 +75,33 @@
       "id": 4,
       "studentId": 2,
       "skillId": 4
+    }
+  ],
+  "users": [
+    {
+      "email": "john.doe@gmail.com",
+      "password": "$2a$10$DlFbwERvbHDRqdIN8ar4ae6IBPvMScocfZ7ndNowpGavI1f65CN7i",
+      "id": 1
+    },
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$6qlrqlH6usiIlUo/tYuPIuo0KMmlTea9Ocx2evQSJHSz7FGlMYbTG",
+      "id": 2
+    },
+    {
+      "email": "olivier2@mail.com",
+      "password": "$2a$10$MN4bpYZ7OMUiDFxxd372ZevjQcjOxQW892LBQ3H2.99Zp1CxpVmWK",
+      "id": 3
+    },
+    {
+      "email": "olivier3@mail.com",
+      "password": "$2a$10$g5oiWnH7JW/Skz89o920dul3XxstnWJsJ6BpfljUyiDKCAm0VpHT2",
+      "id": 4
+    },
+    {
+      "email": "olivier4@mail.com",
+      "password": "$2a$10$THFW3t5i/dFn4uzhLPC.Heh8Z4By9loTFwq8fHKePgl.ZDfQJLvx.",
+      "id": 5
     }
   ]
 }
