@@ -22,6 +22,7 @@ import { StudentsComponent } from './students/pages/students/students.component'
 
 import {StudentsService} from "./students/services/students.service";
 import { SkillsComponent } from './skills/pages/skills/skills.component';
+import { TeachersComponent } from './teachers/pages/teachers/teachers.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SkillsComponent } from './skills/pages/skills/skills.component';
     AboutComponent,
     HomeComponent,
     StudentsComponent,
-    SkillsComponent
+    SkillsComponent,
+    TeachersComponent
   ],
   imports: [
     BrowserModule,

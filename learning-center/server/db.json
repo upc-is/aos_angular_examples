@@ -125,5 +125,19 @@
       "studentId": 2,
       "skillId": 4
     }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "lastName": "Cobeñas",
+      "firstName": "Rosa",
+      "codigo": 8025
+    },
+    {
+      "id": 2,
+      "lastName": "Ocampo",
+      "firstName": "Ernesto",
+      "codigo": 9045
+    }
   ]
 }
