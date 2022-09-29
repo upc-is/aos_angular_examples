@@ -131,13 +131,37 @@
       "id": 1,
       "lastName": "Cobeñas",
       "firstName": "Rosa",
-      "codigo": 8025
+      "codigo": "8026"
     },
     {
       "id": 2,
       "lastName": "Ocampo",
       "firstName": "Ernesto",
-      "codigo": 9045
+      "codigo": "8852"
+    },
+    {
+      "lastName": "Velasquez",
+      "firstName": "Angel Augusto",
+      "codigo": "7586",
+      "id": 3
+    },
+    {
+      "lastName": "Mayta",
+      "firstName": "Jorge",
+      "codigo": "10253",
+      "id": 4
+    },
+    {
+      "lastName": "Quevedo",
+      "firstName": "David",
+      "codigo": "9025",
+      "id": 5
+    },
+    {
+      "lastName": "Delgado",
+      "firstName": "Jorge",
+      "codigo": "5623",
+      "id": 6
     }
   ]
 }

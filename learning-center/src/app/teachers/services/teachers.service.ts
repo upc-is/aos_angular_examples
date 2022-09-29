@@ -31,6 +31,13 @@ export class TeachersService {
     // Return Observable with Error Message to Client
     return throwError(() => new Error('Something happened with request, please try again later'));
   }
+  // crear new teacher
+  create(item: any): Observable<Teacher> {
+    return this.http.post<Teacher>(this.basePath, JSON.stringify(item), this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError));
+  }
 
   // Get Teacher by id
   getById(id: any): Observable<Teacher> {
